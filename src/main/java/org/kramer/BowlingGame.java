@@ -11,17 +11,17 @@ public class BowlingGame {
 
   public int score() {
     int totalScore = 0;
-    int rolIdx = 0;
+    int rollIdx = 0;
     for (int frame = 0; frame < 10; frame++) {
-      if (isStrike(rolIdx)) {
-        totalScore += 10 + nextTwoRollsForStrike(rolIdx);
-        rolIdx += 1;
-      } else if (isSpare(rolIdx)) {
-        totalScore += 10 + nextRollForSpare(rolIdx);
-        rolIdx += 2;
+      if (isStrike(rollIdx)) {
+        totalScore += 10 + nextTwoRollsForStrike(rollIdx);
+        rollIdx += 1;
+      } else if (isSpare(rollIdx)) {
+        totalScore += 10 + nextRollForSpare(rollIdx);
+        rollIdx += 2;
       } else {
-        totalScore += sumOfRollsInFrame(rolIdx);
-        rolIdx += 2;
+        totalScore += sumOfRollsInFrame(rollIdx);
+        rollIdx += 2;
       }
     }
     return totalScore;
